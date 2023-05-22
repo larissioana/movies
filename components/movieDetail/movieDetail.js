@@ -61,7 +61,7 @@ return (
         {similarData.results &&
    
       
-        <SimilarMovies similarData={similarData} title='Similar'/>
+        <SimilarMovies similarData={similarData} title='Similar Movies'/>
     }
          </>
     )

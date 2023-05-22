@@ -16,7 +16,7 @@
 }
 
 
-.recommendationContainer{
+.similarContainer{
     display: flex;
     flex-direction: column;
     border-radius: .3rem;

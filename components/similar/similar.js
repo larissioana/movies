@@ -11,9 +11,9 @@ const SimilarMovies = ({similarData=[], title}) => {
         <>
          <h2 className={styles.title}>{title}</h2>
          <div className={styles.container} >
-         {similarData.results.map((recommendation) => {
-            const {title, poster_path, id} = recommendation;
-            return <motion.div key={id} className={styles.recommendationContainer} whileHover={...scale}>
+         {similarData.results.map((similarMovie) => {
+            const {title, poster_path, id} = similarMovie;
+            return <motion.div key={id} className={styles.similarContainer} whileHover={...scale}>
                  {poster_path ?
                  <>
                  <Link href={`/movies/${id}`}> 
