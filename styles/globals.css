@@ -31,7 +31,11 @@
 
   --blue: rgba(75, 85, 99, 1);
   --blue20: rgb(55, 65, 81);
+  scrollbar-width: none;
+  
 }
+
+
 
 html,
 body {
@@ -39,11 +43,6 @@ body {
   font-family: "Roboto Slab",serif;
   background-color: var(--black40);
   color: #ebebeb;
-}
-
-::-webkit-scrollbar{
-  width:0px;
-  background:transparent;
 }
 
 
