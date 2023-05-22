@@ -5,6 +5,7 @@ import {registerUserWithEmailAndPassword, createUser} from '../../utils/firebase
 import FormInput from "@/components/formInput/formInput";
 import { useRouter } from "next/router";
 import { UserContext } from "@/context/userContext";
+import Loading from "@/components/loading/loading";
 
 const initialFormFields = {
     name: '',
@@ -14,6 +15,7 @@ const initialFormFields = {
 
 const SignUp = () => {
    const [formFields, setFormFields] = useState(initialFormFields);
+   const [isLoading, setIsLoading] = useState(false);
    const {name, email, password} = formFields;
    const [userMsg, setUserMsg] = useState("");
    const router = useRouter();
@@ -33,13 +35,16 @@ const SignUp = () => {
      event.preventDefault();
 
      try{
-    
+       setIsLoading(true);
        const {user} = await registerUserWithEmailAndPassword(email, password);
        await createUser(user);
        setCurrentUser(user);
        resetFormFields();
-       router.push('/')
+      
+       router.push('/');
+       isLoading(false);
      } catch(error) {
+      setIsLoading(false);
        if(error.code === 'auth/email-already-in-use'){
         setUserMsg('Cannot create user, email already in use')
        } 
@@ -53,6 +58,7 @@ const SignUp = () => {
         <Head>
             <title>SignUp</title>
         </Head>
+        {isLoading? <Loading/> :
         <div className={styles.container}>
           <form className={styles.main} onSubmit={handleOnSubmit}>
           <div className={styles.mainWrapper}>
@@ -69,7 +75,7 @@ const SignUp = () => {
           </div>
           </form>
           </div>
-    
+}
         </>
     )
 };
