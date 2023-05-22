@@ -1,0 +1,27 @@
+  .videoPlayer{
+    border-radius: 10px 10px 0px 0px;
+    width:40rem; 
+    height:25rem;
+    margin:1rem 0rem;
+   }
+
+   @media (max-width:660px){
+    .videoPlayer{
+        width:30rem;
+        height:15rem;
+      }
+   }
+  
+   @media (max-width:468px){
+    .videoPlayer{
+        width:20rem;
+        height:12rem;
+      }
+   }
+  
+   @media (max-width:330px){
+    .videoPlayer{
+        width:18rem;
+        height:12rem;
+      }
+   }

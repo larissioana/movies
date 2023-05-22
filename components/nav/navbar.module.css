@@ -1,0 +1,177 @@
+
+.navbar {
+    color: var(--white10);
+    position: fixed;
+    top: 0;
+    left:0;
+    background-image: linear-gradient(to bottom, var(--gradient-stops));
+    --gradient-from: var(--black);
+    --gradient-stops: var(--gradient-from), var(--gradient-to, rgba(0, 0, 0, 0));
+    width: 100%;
+    z-index: 50;
+    margin:0rem auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:.5rem 2rem;
+    height:6rem;
+   }
+ 
+ 
+  .logoLink {
+    font-weight: 900;
+    font-size: clamp(1.4rem,2vw,2.3rem);
+    color: var(--white10);
+    -webkit-text-stroke: 1px rgb(15, 14, 14);
+
+  }
+  .logoWrapper {
+    color: var(--red);
+    width:6rem;
+
+  }
+  
+  .navLinks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    list-style: none;
+   }
+ 
+  .links{
+    cursor: pointer;
+    margin-left:2rem;
+    font-size: clamp(1.2rem,2vw,1.3rem);
+   }
+
+   .burgerMenu{
+    cursor: pointer;
+    display: none;
+    
+   }
+
+   .line, .line1, .line2{
+    width:3rem;
+    height:.2rem;
+    margin-top:.5rem;
+    background: var(--white20);
+   }
+   
+   .navContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding:1rem;
+  }
+  
+  .loginBtn {
+    display: flex;
+    justify-content: center;
+    width:10rem;
+    align-items: center;
+    color: var(--white);
+    background:none;
+    border:none;
+    cursor:pointer;
+    z-index:50;
+  }
+
+ 
+  .signIn{
+    font-size: clamp(1.2rem,2vw,1.3rem);
+  }
+
+  .navDropdown {
+    position: absolute;
+    margin-left: auto;
+    background-color: var(--black50);
+    border-width: 2px;
+    color: var(--white-20);
+    border-radius: 0.25rem;
+    border-color: var(--blue);
+    transition:all 2s ease-in;
+  }
+ 
+  .linkName {
+    display: block;
+    padding-top:.4rem;
+    padding-left:.4rem;
+    padding-right:.4rem;
+    padding-bottom: .4rem;
+    font-size: .9rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+ 
+  .linkName:hover {
+    text-decoration: underline;
+  }
+ 
+  .lineWrapper {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  @media (max-width:789px){
+    .navbar{
+      justify-content: space-between;
+      margin-bottom:3rem;
+    }
+    .navItems{
+     padding:0;
+    }
+
+    .logoWrapper{
+      width:0;
+      display:none;
+      
+    }
+    .navContainer{
+      padding:0rem 1rem;
+
+    }
+
+    .burgerMenu{
+      position:relative;
+      z-index:10;
+      display:block;
+    }
+
+
+    .navLinks{
+      position:absolute;
+      top:0vh;
+      left:0rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding:0;
+      margin:0;
+      width:50%;
+      min-height:100vh;
+      background: var(--black40);
+      transform: translateX(-100%);
+      transition: all .2s ease-in-out;
+
+    }
+
+    .showLinks{
+      transform: translateX(0); 
+    }
+
+    .links{
+      padding:2rem 0rem;
+      margin:0;
+    }
+
+    .userEmail{
+      z-index:50;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+   
+    
+
+  }

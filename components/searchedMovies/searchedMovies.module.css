@@ -1,0 +1,15 @@
+
+.cardImg{
+    object-fit: cover;
+    width:20rem;
+    height:25rem;
+    overflow:hidden;
+   
+  }
+
+  @media (max-width:400px){
+    .cardImg{
+        width:10rem;
+        height:15rem;
+    }
+  }
