@@ -27,7 +27,7 @@ const SimilarMovies = ({similarData=[], title}) => {
                 </>
                  }
                   </motion.div>
-         }).slice(0, 7)}
+         }).slice(0, 5)}
     
         </div>
 
