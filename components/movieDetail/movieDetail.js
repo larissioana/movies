@@ -5,10 +5,10 @@ import Cast from "../cast/cast";
 import VideoTrailer from "../trailer/videoTrailer";
 import { IMAGE_URL} from "@/lib/movies";
 import Head from "next/head";
-import Recommendations from "../recommendations/recommendations";
+import SimilarMovies from "../similar/similar";
 
 
-const MovieDetail = ({movie, castData, recommendationsData}) => {
+const MovieDetail = ({movie, castData, similarData}) => {
 
     const {
         overview, 
@@ -58,7 +58,11 @@ return (
         </div>
         </div>
         <Cast castData={castData}/>
-        <Recommendations recommendationsData={recommendationsData} title='Similar'/>
+        {similarData.results &&
+   
+      
+        <SimilarMovies similarData={similarData} title='Similar'/>
+    }
          </>
     )
 };

@@ -36,7 +36,6 @@ const SearchBar = ({setSearchTerm, movies}) => {
        {movies.results.map((movie) => {
         const {poster_path, title, id} = movie;
         return <div key={id} className={styles.moviesWrapper}>
- 
                <SearchedMovies title={title} imageUrl={poster_path} id={id}/>
                </div>
        })}

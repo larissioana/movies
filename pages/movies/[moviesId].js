@@ -8,24 +8,24 @@ export async function getServerSideProps(context) {
    const movieData = await response.json();
    const cast = await fetch(`${API_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US&page=1`);
    const castData = await cast.json();
-   const recommendations = await fetch(`${API_URL}/movie/${movieId}/similar?api_key=${API_KEY}`);
-   const recommendationsData = await recommendations.json();
+   const similar = await fetch(`${API_URL}/movie/${movieId}/similar?api_key=${API_KEY}`);
+   const similarData = await similar.json();
  
  return {
         props: {
          movieData,
          castData,
-         recommendationsData,
+         similarData,
      
         }
     }
 };
 
-const Movie = ({movieData, castData, recommendationsData}) => {
+const Movie = ({movieData, castData, similarData}) => {
    
     return (
     <>
-    <MovieDetail movie={movieData} castData={castData} recommendationsData={recommendationsData}/>
+    <MovieDetail movie={movieData} castData={castData} similarData={similarData}/>
     </>
    )
 };
