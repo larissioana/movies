@@ -23,6 +23,17 @@
     overflow-x: scroll;
     overflow-y: hidden;
   }
+
+ .cardWrapper::-webkit-scrollbar{
+    width:10px;
+    background: var(--black);
+  
+  }
+  .cardWrapper::-webkit-scrollbar-thumb {
+    background:var(--red20);
+    width:10px;
+  }
+  
   
   .cardImg:hover {
     z-index: 10;
