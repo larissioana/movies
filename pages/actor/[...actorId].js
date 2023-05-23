@@ -20,7 +20,7 @@ return {
 const Actor = ({actor}) => {
 const {name, biography, birthday, place_of_birth, profile_path, known_for_department} = actor;
 const [readMore, setReadMore] = useState(false);
-
+console.log(biography.length)
 const handleOnClickReadMore = () => {
     setReadMore(!readMore);
 };
@@ -46,14 +46,16 @@ const handleOnClickReadMore = () => {
         {place_of_birth &&
         <h5 className={styles.birth}> Place of birth: <span className={styles.text}>{place_of_birth}</span></h5>
          }
-        {biography && 
+        {biography.length > 300 ?
         <div>
         <p className={styles.biography}> Biography: <span className={styles.text}>
          { readMore ? biography : `${biography.substring(0,250)}...`}
         </span></p>
+     
         <button className={styles.readMore} onClick={handleOnClickReadMore}>{readMore ? 'Show less' : 'Read more' }</button>
+
        </div> 
-        }
+       :<p className={styles.biography}>Biography: <span className={styles.text}>{biography}</span></p> }
         <p className={styles.knownFor}>Known for: <span className={styles.text}>{known_for_department}</span></p>
         </div>
         </div>

@@ -4,14 +4,19 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-const SimilarMovies = ({similarData=[], title}) => {
+const SimilarMovies = ({title, similarResults}) => {
     const scale = {scale:1.1};
-
+    const results = similarResults.length  === 0;
+    console.log({results})
     return (
         <>
-         <h2 className={styles.title}>{title}</h2>
+        {results ?
+        <div></div> :
+        <h2 className={styles.title}>{title}</h2>
+        }
+        
          <div className={styles.container} >
-         {similarData.results.map((similarMovie) => {
+         {similarResults.map((similarMovie) => {
             const {title, poster_path, id} = similarMovie;
             return <motion.div key={id} className={styles.similarContainer} whileHover={...scale}>
                  {poster_path ?
@@ -32,7 +37,6 @@ const SimilarMovies = ({similarData=[], title}) => {
         </div>
 
         </>
-
     )
 };
 

@@ -5,7 +5,6 @@ import {useState, useContext} from "react";
 import { UserContext } from "@/context/userContext";
 import { signinUser} from "@/utils/firebase";
 import FormInput from "@/components/formInput/formInput";
-import Loading from "@/components/loading/loading";
 
 const initialFormFields = {
     email: '',
@@ -15,7 +14,6 @@ const initialFormFields = {
 const Login = () => {
    const router = useRouter();
    const [userMsg, setUserMsg] = useState('');
-   const [isLoading, setIsLoading] = useState(false);
    const [formFields, setFormFields] = useState(initialFormFields);
    const {email, password} = formFields;
    const {setCurrentUser} = useContext(UserContext);
@@ -24,24 +22,26 @@ const Login = () => {
     event.preventDefault();
     
     try{
-    setIsLoading(true);
     const {user} = await signinUser(email, password);
     setCurrentUser(user);
     resetFormFields();
-    setIsLoading(false);
-    router.push('/');
+     router.push('/');
   
     } catch(error) {
-  
-      if(error.code === 'auth/wrong-password') {
-        setUserMsg('Incorrect password for this email')
-      } else if(error.code === 'auth/user-not-found') {
-        setUserMsg('No user associated with this password')
-      } 
-     console.log('Error logging in', error)
+      switch(error.code){
+        case 'auth/wrong-password':
+            setUserMsg('Incorrect password for email');
+            break;
+        case 'auth/user-not-found':
+            setUserMsg('No user associated with this email');
+            break;
+            default:
+          console.log(error);
+    
         
      }
-   };
+   }
+  }
 
    const resetFormFields = () => {
     setFormFields(initialFormFields);
@@ -58,8 +58,7 @@ const Login = () => {
         <Head>
             <title>SignIn</title>
         </Head>
-        {isLoading ? <Loading/> :
-        <div className={styles.container}>
+         <div className={styles.container}>
           <form  onSubmit={handleOnSubmit} className={styles.main}>
           <div className={styles.mainWrapper}>
           <h1 className={styles.title}>Sign In</h1>
@@ -74,7 +73,7 @@ const Login = () => {
           </div>
           </form>
           </div>
-}
+
     
         </>
     )

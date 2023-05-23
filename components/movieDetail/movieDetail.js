@@ -8,7 +8,7 @@ import Head from "next/head";
 import SimilarMovies from "../similar/similar";
 
 
-const MovieDetail = ({movie, castData, similarData}) => {
+const MovieDetail = ({movie, castData, similarResults}) => {
 
     const {
         overview, 
@@ -58,11 +58,7 @@ return (
         </div>
         </div>
         <Cast castData={castData}/>
-        {similarData.results &&
-   
-      
-        <SimilarMovies similarData={similarData} title='Similar Movies'/>
-    }
+        <SimilarMovies title='Similar Movies' similarResults={similarResults}/>
          </>
     )
 };

@@ -4,9 +4,12 @@ import { IMAGE_URL_SMALL } from '@/lib/movies';
 import Link from 'next/link';
 
 const Cast = ({castData}) => {
-
+   const actors = castData.cast.length === 0;
     return (
       <>
+      {actors ?
+      <div></div> :
+       <h2 className={styles.title}>Actors</h2> }
         <div className={styles.castContainer}>
          <div className={styles.container}>
             {castData.cast.map((cast) => {

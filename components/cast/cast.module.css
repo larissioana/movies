@@ -4,6 +4,13 @@
    
 }
 
+.title{
+    padding:3rem 0rem 0rem 0rem;
+    font-size:clamp(1.1rem, 2vw, 1.9rem);
+    text-align: center;
+}
+
+
 .container{
     padding:1rem 3rem;
     display:grid;

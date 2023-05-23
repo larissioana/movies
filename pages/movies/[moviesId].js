@@ -10,22 +10,23 @@ export async function getServerSideProps(context) {
    const castData = await cast.json();
    const similar = await fetch(`${API_URL}/movie/${movieId}/similar?api_key=${API_KEY}`);
    const similarData = await similar.json();
+   const similarResults = similarData.results;
  
  return {
         props: {
          movieData,
          castData,
-         similarData,
+         similarResults
      
         }
     }
 };
 
-const Movie = ({movieData, castData, similarData}) => {
-   
+const Movie = ({movieData, castData, similarResults}) => {
+
     return (
     <>
-    <MovieDetail movie={movieData} castData={castData} similarData={similarData}/>
+    <MovieDetail movie={movieData} castData={castData} similarResults={similarResults}/>
     </>
    )
 };
