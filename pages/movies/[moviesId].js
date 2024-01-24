@@ -2,7 +2,8 @@ import { API_KEY, API_URL} from "@/lib/movies";
 import MovieDetail from "@/components/movieDetail/movieDetail";
 
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(context)
+{
    const movieId = context.params.moviesId;
    const response = await fetch(`${API_URL}/movie/${movieId}?api_key=${API_KEY}&append_to_response=videos`)
    const movieData = await response.json();
@@ -13,20 +14,24 @@ export async function getServerSideProps(context) {
    const similarResults = similarData.results;
  
  return {
-        props: {
-         movieData,
-         castData,
-         similarResults
-     
+        props:
+        {
+            movieData,
+            castData,
+            similarResults
         }
-    }
+        }
 };
 
-const Movie = ({movieData, castData, similarResults}) => {
-
+const Movie = ({movieData, castData, similarResults}) =>
+{
     return (
     <>
-    <MovieDetail movie={movieData} castData={castData} similarResults={similarResults}/>
+        <MovieDetail
+            movie={movieData}
+            castData={castData} 
+            similarResults={similarResults}
+        />
     </>
    )
 };

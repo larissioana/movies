@@ -7,25 +7,33 @@ import {fetchMovies} from '@/lib/movies'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export async function getServerSideProps() {
+export async function getServerSideProps()
+{
  const topRatedMovies = await fetchMovies('top_rated', 1);
  const popularMovies = await fetchMovies('popular', 2);
  const upcomingMovies = await fetchMovies('upcoming', 3);
  const nowPlayingMovies = await fetchMovies('now_playing', 20);
 
   return {
-    props: {
-    topRatedMovies,
-    popularMovies,
-    upcomingMovies,
-    nowPlayingMovies,
+    props:
+    {
+      topRatedMovies,
+      popularMovies,
+      upcomingMovies,
+      nowPlayingMovies,
     },
   }
 };
 
 
-export default function Home({topRatedMovies, popularMovies, upcomingMovies, nowPlayingMovies}) {
-
+export default function Home(
+{
+  topRatedMovies,
+  popularMovies, 
+  upcomingMovies, 
+  nowPlayingMovies
+}) 
+{
   return (
     <>
       <Head>
@@ -36,10 +44,10 @@ export default function Home({topRatedMovies, popularMovies, upcomingMovies, now
       </Head>
       <NavBar/>
       <Banner movies={popularMovies[2]}/>
-     <SectionCards movies={topRatedMovies} title='TopRated' size='medium'/>
-     <SectionCards movies={popularMovies} title='Popular' size='large'/>
-     <SectionCards movies={upcomingMovies} title='UpComing' size='small'/>
-     <SectionCards movies={nowPlayingMovies} title='NowPlaying' size='medium'/>
+      <SectionCards movies={topRatedMovies} title='TopRated' size='medium'/>
+      <SectionCards movies={popularMovies} title='Popular' size='large'/>
+      <SectionCards movies={upcomingMovies} title='UpComing' size='small'/>
+      <SectionCards movies={nowPlayingMovies} title='NowPlaying' size='medium'/>
     </>
   )
 }

@@ -1,117 +1,128 @@
-.trailer{
+.trailer
+{
   display: grid;
   place-items: center;
   object-fit: cover;
   object-position: top;
-  margin:6rem 0rem 1rem 0rem;
-  
+  margin: 6rem 0rem 1rem 0rem;
 }
 
-.movieContent{
-  min-height:80vh;
+.movieContent
+{
+  min-height: 80vh;
   object-position: top;
   border-radius: 1rem;
-
-
-
 }
 
-.flexContainer{
-  width:100%;
+.flexContainer
+{
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   background: rgba(21, 20, 20, 0.5);
-  padding:7rem 2rem;
+  padding: 7rem 2rem;
   border-radius: 1rem;
-  border:1px solid var(--shadow20) ;
+  border: 1px solid var(--shadow20) ;
 }
 
-.col1, .col2{
-  flex:1;
+.col1, .col2
+{
+  flex: 1;
 }
 
-
-
-.col2{
-  padding-top:1rem;
+.col2
+{
+  padding-top: 1rem;
 }
 
-
-.title{
-  font-size:clamp(1rem, 2vw, 2rem);
-  margin-bottom:.4rem;
+.title
+{
+  font-size: clamp(1rem, 2vw, 2rem);
+  margin-bottom: .4rem;
 }
 
-.releaseDate{
+.releaseDate
+{
   color: var(--green10);
-  font-size:clamp(.9rem, 2vw, 1.3rem);
-  margin-bottom:.5rem;
+  font-size: clamp(.9rem, 2vw, 1.3rem);
+  margin-bottom: .5rem;
   font-weight: bolder;
 }
 
-.description{
-  width:400px;
-  font-size:clamp(.8rem, 2vw, 1rem);
-  margin-top:.6rem;
+.description
+{
+  width: 400px;
+  font-size: clamp(.8rem, 2vw, 1rem);
+  margin-top: .6rem;
 }
 
-.posterPath{
+.posterPath
+{
  width: 23rem;
- height:30rem;
+ height: 30rem;
  object-fit: cover;
 }
 
-.vote{
-  margin-top:1rem;
-  width:2.8rem;
-  height:2.8rem;
-  border:2.5px inset var(--green10);
-  display:grid;
+.vote
+{
+  margin-top: 1rem;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 2.5px inset var(--green10);
+  display: grid;
   place-content: center;
   border-radius: 50%;
 }
 
 
-.text{
-  font-size:1rem;
+.text
+{
+  font-size: 1rem;
 }
 
-.tagline{
-  font-size:clamp(.9rem, 2vw, 1rem);
+.tagline
+{
+  font-size: clamp(.9rem, 2vw, 1rem);
   margin-bottom: 1rem;
-  max-width:400px;
+  max-width: 400px;
 }
 
-.btn{
-  padding:1rem 2rem;
-  font-size:.9rem;
+.btn
+{
+  padding: 1rem 2rem;
+  font-size: .9rem;
   font-weight: bolder;
   background-color: var(--red10);
-  border:none;
+  border :none;
   border-radius: 10px 10px 10px 10px;
-  cursor:pointer;
-  margin-top:1rem;
+  cursor: pointer;
+  margin-top: 1rem;
 }
 
-@media (max-width:480px){
-  .posterPath{
-    margin-top:1rem;
-    width:18rem;
+@media (max-width: 480px)
+{
+  .posterPath
+  {
+    margin-top: 1rem;
+    width: 18rem;
   }
-  .flexContainer{
-    padding:2rem;
-    display:grid;
+
+  .flexContainer
+  {
+    padding: 2rem;
+    display: grid;
     place-items: center;
-}
-
-  .col2{
-    padding-left:0rem;
   }
 
-  .description{
-    width:100%;
- 
+  .col2
+  {
+    padding-left: 0rem;
+  }
+
+  .description
+  {
+    width: 100%;
   }
 }

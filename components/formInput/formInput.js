@@ -1,8 +1,7 @@
-
 const FormInput = ({...otherProps}) => {
     return (
         <div>
-            <input {...otherProps}/>
+            <input {...otherProps} />
         </div>
     )
 };

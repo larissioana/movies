@@ -1,112 +1,122 @@
-.actorWrapper{
-    margin-top:8rem;
-    margin-bottom:2rem;
+.actorWrapper
+{
+    margin-top: 8rem;
+    margin-bottom: 2rem;
 }
 
-.name{
+.name
+{
     text-align: center;
-    font-size:clamp(1.5rem, 2vw, 2rem);
+    font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
-.container{
-    margin-top:4rem;
-    display:grid;
+.container
+{
+    margin-top: 4rem;
+    display: grid;
     place-items: center;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    padding:1rem 1rem;
-    gap:2rem;
-   
-
+    padding: 1rem 1rem;
+    gap: 2rem; 
 }
 
-.profilePath{
-    width:30rem;
-    height:35rem;
+.profilePath
+{
+    width: 30rem;
+    height: 35rem;
     object-fit: cover;
     object-position: center;
-
 }
 
-.biography{
-    max-width:600px;
+.biography
+{
+    max-width: 600px;
     text-align: justify;
     line-height: 1.4rem;
-    padding:0rem 1rem;
- 
-}
-.text{
-    -webkit-text-stroke:.3px rgb(11, 9, 9);
+    padding: 0rem 1rem;
 }
 
-.birthday{
-    margin-bottom:.5rem;
-    font-size:clamp(.9rem, 2vw, 1rem);
-    padding:0rem 1rem;
+.text
+{
+    -webkit-text-stroke: .3px rgb(11, 9, 9);
 }
 
-
-.birth{
-    margin-bottom:.5rem;
-    font-size:clamp(.9rem, 2vw, 1rem);
-    padding:0rem 1rem;
-
+.birthday
+{
+    margin-bottom: .5rem;
+    font-size: clamp(.9rem, 2vw, 1rem);
+    padding: 0rem 1rem;
 }
 
-.biography{
-    margin-bottom:.5rem;
-    font-size:clamp(.9rem, 2vw, 1.1rem);
-    padding:0rem 1rem;
-
+.birth
+{
+    margin-bottom: .5rem;
+    font-size: clamp(.9rem, 2vw, 1rem);
+    padding: 0rem 1rem;
 }
 
-.knownFor{
-    margin-bottom:.5rem;
-    font-size:clamp(.9rem, 2vw, 1rem);
-    padding:.3rem 1rem;
-
+.biography
+{
+    margin-bottom: .5rem;
+    font-size: clamp(.9rem, 2vw, 1.1rem);
+    padding: 0rem 1rem;
 }
 
-.readMore{
+.knownFor
+{
+    margin-bottom: .5rem;
+    font-size: clamp(.9rem, 2vw, 1rem);
+    padding: .3rem 1rem;
+}
+
+.readMore
+{
     background: none;
-    cursor:pointer;
-    border-bottom:2px solid var(--green10);
+    cursor: pointer;
+    border-bottom: 2px solid var(--green10);
     border-right: 2px solid var(--green10);
-    border-top:0;
-    border-left:0;
+    border-top: 0;
+    border-left: 0;
     color: var(--white10);
-    padding:1rem 1rem;
-    margin-bottom:.5rem;
-    font-size:1rem;
-    margin:.5rem 1rem;
+    padding: 1rem 1rem;
+    margin-bottom: .5rem;
+    font-size: 1rem;
+    margin: .5rem 1rem;
     transition: all .3s ease;
 }
 
-.info{
+.info
+{
     text-align: center;
 }
 
-@media (max-width:1160px){
-.container{
+@media (max-width: 1160px)
+{
+.container
+{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 }
 
-@media (max-width:505px){
-  .profilePath{
-    width:20rem;
-    height:30rem;
+@media (max-width: 505px)
+{
+  .profilePath
+  {
+    width: 20rem;
+    height: 30rem;
   }
 }
 
-@media (max-width:340px){
-    .profilePath{
-      width:17rem;
-      height:27rem;
+@media (max-width: 340px)
+{
+    .profilePath
+    {
+      width: 17rem;
+      height: 27rem;
     }
-  }
+}
   
   
